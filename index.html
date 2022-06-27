@@ -23,17 +23,18 @@
         .text-centred { text-align:center; }
         .text-right    { text-align:right; }
 
-        .text-m   { font-size:1em; line-height:1.3em; letter-spacing:-0.02em; }
-        .text-xxl { font-size:2em; line-height:1.3em; letter-spacing:-0.04em; }
+        .text-s   { font-size:0.7em; line-height:1.3em; letter-spacing:+0.10em; }
+        .text-m   { font-size:1.0em; line-height:1.3em; letter-spacing:-0.02em; }
+        .text-xl  { font-size:1.5em; line-height:1.3em; letter-spacing:-0.03em; }
+        .text-xxl { font-size:2.0em; line-height:1.3em; letter-spacing:-0.04em; }
 
         section { margin-top: 4em; margin-bottom: 4em; border-left:10px solid hsl(202, 14%, 35%); padding: 2em 3em; }
 
-        .purple-to-blue-gradient { background: linear-gradient(140deg, #A154A1, #0072B4); }
+        .purple-to-blue-gradient       { background: linear-gradient(140deg, hsla(300, 31%, 48%, 1.0), hsla(202, 100%, 35%, 1.0)); }
         .purple-to-blue-gradient-light { background: linear-gradient(140deg, hsla(300, 31%, 48%, 0.2), hsla(202, 100%, 35%, 0.2)); }
-        /*.yellow-to-orange-gradient { background: linear-gradient(140deg, #FFD400, #F7941E); }*/
-        .yellow-to-orange-gradient { background: linear-gradient(140deg, hsl(50, 100%, 50%), hsl(33, 93%, 54%)); }
-        .pink-to-orange-gradient { background: linear-gradient(140deg, #E23D96, #F7941E); }
-        .pink-to-orange-gradient-light { background: linear-gradient(140deg, hsla(328, 74%, 56%, 0.5), hsla(33, 93%, 54%, 0.5)); }
+        .yellow-to-orange-gradient     { background: linear-gradient(140deg, hsla(50, 100%, 50%, 1.0), hsla( 33,  93%, 54%, 1.0)); }
+        .pink-to-orange-gradient       { background: linear-gradient(140deg, hsla(328, 74%, 56%, 1.0), hsla( 33,  93%, 54%, 1.0)); }
+        /*.pink-to-orange-gradient-light { background: linear-gradient(140deg, hsla(328, 74%, 56%, 0.5), hsla(33, 93%, 54%, 0.5)); }*/
 
         .key-feature { padding:1em; flex:1 200px; }
 
@@ -57,14 +58,14 @@
     </header>
 
     <main>
-        <blockquote class="constrained-width text-centred text-xxl"
-                    style="margin-top:2em; margin-bottom: 2em; padding: 0 4em;">
-            Our software delivers effective compliance management for UK-based directly authorised financial advice firms, networks and consolidators.
+        <blockquote class="constrained-width width-med text-centred text-xxl"
+                    style="margin-top:2em; margin-bottom: 2em; padding: 0 1em;">
+            Our software delivers effective compliance oversight and management for UK-based directly authorised financial advice firms, networks and consolidators.
         </blockquote>
 
         <div class="constrained-width width-full">
             <section class="purple-to-blue-gradient-light text-dark">
-                <h2 class="text-grey">Do you recognise these common challenges?</h2>
+                <h2 class="text-xl text-grey">Do you recognise these common challenges?</h2>
 
                 <ul style="margin:0; padding:0; list-style:none;">
                     <li style="margin:2em 0;"><img src="images/icon/comment-question.svg" width="50" alt="?" style="vertical-align: middle;"/> How do you ensure consistency when <strong style="font-size:1.2em;">overseeing multiple firms or advisers</strong> in an increasingly regulated environment?</li>
@@ -87,7 +88,7 @@
             </section>
 
             <section id="key-features" class="purple-to-blue-gradient-light">
-                <h2 class="text-grey">Key Features</h2>
+                <h2 class="text-xl text-grey">Key Features</h2>
                 <ul class="flex-container plain-list text-grey" style="margin-left: -1em; margin-right: -1em;">
                     <li class="key-feature">
                         <h3>Key Regulatory registers</h3>
