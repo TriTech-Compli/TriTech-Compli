@@ -8,7 +8,9 @@
         html { margin:0; padding:0; font-size: 16px; }
         body { margin:0 auto; padding:0; }
 
-        .constrained-width { margin-left:auto; margin-right:auto; max-width: 1200px; box-sizing: border-box; }
+        .constrained-width { margin-left:auto; margin-right:auto; box-sizing: border-box; }
+        .width-full { max-width:1200px; }
+        .width-med  { max-width: 800px; }
         .flex-container { display: flex; flex-wrap: wrap; }
 
         .plain-list { margin:0; padding:0; list-style: none; }
@@ -37,8 +39,8 @@
 </head>
 <body class="text-m text-grey">
     <header class="yellow-to-orange-gradient" style="align-items: center;">
-        <div class="constrained-width flex-container">
-            <h1 style="margin:0; flex:1 300px;">
+        <div class="constrained-width width-full flex-container">
+            <h1 class="centre-on-small-screen" style="margin:0; flex:1 300px;">
                 <img id="logo"
                      src="images/TriTech-Compli-logo.svg"
                      alt="TriTech Compli Ltd." width="350" style="margin:-20px 0"/>
@@ -57,7 +59,7 @@
             Our software delivers effective compliance management for UK-based directly authorised financial advice firms, networks and consolidators.
         </blockquote>
 
-        <div class="constrained-width">
+        <div class="constrained-width width-full">
             <section class="purple-to-blue-gradient-light text-dark">
                 <h2 class="text-grey">Do you recognise these common challenges?</h2>
 
@@ -71,7 +73,7 @@
             </section>
 
             <section class="purple-to-blue-gradient-light text-dark">
-                <h2 class="text-grey">Our cutting-edge software brings you...</h2>
+                <h2 class="text-xl text-grey">Our cutting-edge software brings you...</h2>
                 <ul style="margin:0; padding:0; list-style:none;">
                     <li style="margin:2em 0;"><img src="images/icon/comment-check-outline.svg" width="50" alt="Tick" style="vertical-align: middle;"/> A <strong style="font-size:1.2em;">centralised system</strong> defining and powering workflow, processes and reporting</li>
                     <li style="margin:2em 0;"><img src="images/icon/comment-check-outline.svg" width="50" alt="Tick" style="vertical-align: middle;"/> <strong style="font-size:1.2em;">Automatic notifications and prompts</strong>, ensuring clear communication with no manual steps</li>
@@ -133,7 +135,7 @@
             </a>
         </div>
 
-        <div id="screenshots" class="flex-container constrained-width" style="margin-top:4em; margin-bottom: 4em;">
+        <div id="screenshots" class="flex-container constrained-width width-full" style="margin-top:4em; margin-bottom: 4em;">
             <div class="yellow-to-orange-gradient" style="margin:1em; padding:1em; flex: 1 200px;">
                 <img src="images/screenshot/File-Checking-Progress-Report.png"
                      alt="File Checking Progress Report"
@@ -155,13 +157,13 @@
         </div>
 
         <div class="purple-to-blue-gradient">
-            <h2 class="constrained-width text-white" style="padding:3em 1em 1em 1em;">
+            <h2 class="constrained-width width-full text-xl text-white" style="margin-bottom:0; padding:3em 1em 1em 1em;">
                 Our Background
             </h2>
         </div>
-        <div class="constrained-width" style="padding: 1em 2em;">
-            <p>TriTech Compli Limited has been formed to provide hands-on, pragmatic support to financial advice firms,
-                or those overseeing such firms, in meeting their regulatory responsibilities with effective
+        <div class="constrained-width width-full" style="padding: 1em 2em;">
+            <p>TriTech Compli Limited was formed to provide hands-on, pragmatic support to financial advice firms,
+                or those overseeing such firms, in meeting their regulatory responsibilities through effective
                 oversight of firms and advisers.</p>
             <p>Our software has been providing effective monitoring of firms and advisers for more than 10 years in a regulatory environment.
                 It has been built to be intuitive for both the advisers and those providing oversight functions. Efficiencies driven by automation have been key to our design decisions.
@@ -170,9 +172,9 @@
     </main>
 
     <footer class="pink-to-orange-gradient text-dark">
-        <div class="flex-container constrained-width" style="padding:/*5em 1em*/ 1em; justify-content:end; align-items: end;">
-            <address style="flex:2 300px; text-shadow: 0 0 0.5em white;">
-                Registered in England & Wales.<br />
+        <div class="flex-container constrained-width width-full" style="padding:/*5em 1em*/ 1em; justify-content:end; align-items: end;">
+            <address class="text-s text-white" style="flex:2 300px; text-shadow:0 0 0.5em hsl(328, 74%, 26%);">
+                Registered in England & Wales.
                 Registered Number: 13783864.<br />
                 Registered Office: TriTech Compli Ltd, 4 Persh Way, Maisemore, Glos. GL2 8HQ
             </address>
