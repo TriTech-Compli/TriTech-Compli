@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pricing Policy Demo</title>
+</head>
+<body>
+    <h1>Pricing Policy Demo</h1>
+    <form id="my-form">
+        <fieldset>
+            <label for="number-of-advising-staff-input">Number of advising staff members:</label>
+            <output id="number-of-advising-staff-output" for="number-of-advising-staff-input"></output>
+            <div>
+                <input type="range" id="number-of-advising-staff-input"
+                       value="2" min="1" max="100" />
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="number-of-non-advising-staff-input">Number of non-advising staff members:</label>
+            <output id="number-of-non-advising-staff-output" for="number-of-non-advising-staff-input"></output>
+            <div>
+                <input type="range" id="number-of-non-advising-staff-input"
+                       value="5" min="0" max="100" />
+            </div>
+        </fieldset>
+
+        <div>Total licence cost: &pound;<output id="total-licence-cost-output" for="number-of-advising-staff-input"></output> per month</div>
+<!--        <div>Licence cost per adviser: &pound;<output id="licence-cost-per-adviser-output" for="number-of-advising-staff-input"></output> per month</div>-->
+        <div>Licence cost per user: &pound;<output id="licence-cost-per-user-output" for="number-of-advising-staff-input number-of-non-advising-staff-input"></output> per month</div>
+    </form>
+
+    <script>
+        function updateTotalPrice() {
+            let numberOfAdvisingStaffInput = document.getElementById("number-of-advising-staff-input");
+            let numberOfNonAdvisingStaffInput = document.getElementById("number-of-non-advising-staff-input");
+
+            let numberOfAdvisingStaffOutput = document.getElementById("number-of-advising-staff-output");
+            let numberOfNonAdvisingStaffOutput = document.getElementById("number-of-non-advising-staff-output");
+
+            let totalLicenceCostOutput = document.getElementById("total-licence-cost-output");
+            // let licenceCostPerAdviserOutput = document.getElementById("licence-cost-per-adviser-output");
+            let licenceCostPerUserOutput = document.getElementById("licence-cost-per-user-output");
+
+            let numberOfAdvisingStaff = parseInt(numberOfAdvisingStaffInput.value);
+            let numberOfNonAdvisingStaff = parseInt(numberOfNonAdvisingStaffInput.value);
+
+            let totalLicenceCost = calculateTotalLicencePrice(numberOfAdvisingStaff);
+            // let licenceCostPerAdviser = parseInt(totalLicenceCost / numberOfAdvisingStaff);
+            let licenceCostPerUser = parseInt(totalLicenceCost / (numberOfAdvisingStaff + numberOfNonAdvisingStaff));
+
+            numberOfAdvisingStaffOutput.value = numberOfAdvisingStaff;
+            numberOfNonAdvisingStaffOutput.value = numberOfNonAdvisingStaff;
+            totalLicenceCostOutput.value = totalLicenceCost;
+            // licenceCostPerAdviserOutput.value = licenceCostPerAdviser;
+            licenceCostPerUserOutput.value = licenceCostPerUser;
+        }
+
+        function calculateTotalLicencePrice(numberOfAdvisers) {
+            let total = 0;
+            for(let n = 1; n <= numberOfAdvisers; n++) {
+                total += calculateIndividualLicencePrice(n);
+            }
+
+            return total;
+        }
+
+        function calculateIndividualLicencePrice(licenceNumber) {
+            const bands = [
+                new PricingBand(350,  1),
+                new PricingBand(150,  2),
+                new PricingBand(100,  5),
+                new PricingBand( 75, 10),
+                new PricingBand( 50, 20),
+                new PricingBand( 40, null),
+            ];
+
+            for(let n = 0, l = bands.length; n < l; n++) {
+                let band = bands[n];
+                if(band.max === null || licenceNumber <= band.max) {
+                    return band.price;
+                }
+            }
+
+            throw new Error("Shouldn't get here. Incorrectly configured pricing bands.");
+        }
+
+        class PricingBand{
+            price;
+            max;
+
+            constructor(price, max) {
+                this.price = price;
+                this.max = max;
+            }
+        }
+
+        var form = document.getElementById("my-form");
+
+        form.addEventListener('input', updateTotalPrice);
+        updateTotalPrice(form);
+    </script>
+</body>
+</html>
