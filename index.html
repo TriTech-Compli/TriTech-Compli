@@ -29,7 +29,8 @@
         .text-xl  { font-size:1.5em; line-height:1.3em; letter-spacing:-0.03em; }
         .text-xxl { font-size:2.0em; line-height:1.3em; letter-spacing:-0.04em; }
 
-        section { margin-top: 4em; margin-bottom: 4em; border-left:10px solid hsl(202, 14%, 35%); padding: 2em 3em; }
+        .page-block { break-inside: avoid; }
+        .padded-block { margin-top: 4em; margin-bottom: 4em; padding: 2em 3em; }
 
         .purple-to-blue-gradient       { background: linear-gradient(140deg, hsla(300, 31%, 48%, 1.0), hsla(202, 100%, 35%, 1.0)); }
         .purple-to-blue-gradient-light { background: linear-gradient(140deg, hsla(300, 31%, 48%, 0.2), hsla(202, 100%, 35%, 0.2)); }
@@ -43,6 +44,16 @@
             .centre-on-small-screen { text-align: center; }
         }
     </style>
+    <style media="screen">
+        .text-shadow-orange { text-shadow:0 0 0.5em hsl( 33, 93%, 25%); }
+        .text-shadow-pink   { text-shadow:0 0 0.5em hsl(328, 74%, 26%); }
+
+        .chunky-border-left { border-left:10px solid hsl(202, 14%, 35%); }
+    </style>
+    <style media="print">
+        #logo { width:800px; }
+        .hide-on-print { display: none; }
+    </style>
 </head>
 <body class="font-basic text-m text-grey">
     <header class="yellow-to-orange-gradient" style="align-items: center;">
@@ -52,7 +63,7 @@
                      src="images/TriTech-Compli-logo.svg"
                      alt="TriTech Compli Ltd." width="350" style="margin:-20px 0"/>
             </h1>
-            <div class="text-right centre-on-small-screen text-white" style="margin: 0.5em 1em; flex:2 350px; text-shadow:0 0 0.5em hsl(33, 93%, 25%);">
+            <div class="text-right centre-on-small-screen text-white text-shadow-orange" style="margin: 0.5em 1em; flex:2 350px;">
                 <p class="text-xxl">
                     Driving Efficiencies via Automation
                 </p>
@@ -68,7 +79,7 @@
         </blockquote>
 
         <div class="constrained-width width-full">
-            <section class="purple-to-blue-gradient-light text-dark">
+            <section class="page-block padded-block chunky-border-left purple-to-blue-gradient-light text-dark">
                 <h2 class="text-xl text-grey">Do you recognise these common challenges?</h2>
 
                 <ul style="margin:0; padding:0; list-style:none;">
@@ -80,7 +91,7 @@
                 </ul>
             </section>
 
-            <section class="purple-to-blue-gradient-light text-dark">
+            <section class="page-block padded-block chunky-border-left purple-to-blue-gradient-light text-dark">
                 <h2 class="text-xl text-grey">Our cutting-edge software brings you...</h2>
                 <ul style="margin:0; padding:0; list-style:none;">
                     <li style="margin:2em 0;"><img src="images/icon/comment-check-outline.svg" width="50" alt="Tick" style="vertical-align: middle;"/> A <strong style="font-size:1.2em;">centralised system</strong> defining and powering workflow, processes and reporting</li>
@@ -91,13 +102,13 @@
                 </ul>
             </section>
 
-            <div class="constrained-width text-centred text-xl">
+            <section class="constrained-width text-centred text-xl">
                 <p><strong>Measure</strong> adviser, business and supervision activity and provide clear management information.</p>
                 <p><strong>Act</strong> on trends and concerns highlighted by your compliance reporting.</p>
                 <p><strong>Evidence</strong> the decisions and actions your business takes to ensure good practice.</p>
-            </div>
+            </section>
 
-            <section id="key-features" class="purple-to-blue-gradient-light">
+            <section id="key-features" class="page-block padded-block chunky-border-left purple-to-blue-gradient-light">
                 <h2 class="text-xl text-grey">Key Features</h2>
                 <ul class="flex-container plain-list text-grey" style="margin-left: -1em; margin-right: -1em;">
                     <li class="key-feature">
@@ -149,7 +160,7 @@
             </a>
         </div>
 
-        <div id="screenshots" class="flex-container constrained-width width-full" style="margin-top:4em; margin-bottom: 4em; justify-content: center;">
+        <section id="screenshots" class="flex-container constrained-width width-full" style="margin-top:4em; margin-bottom: 4em; justify-content: center;">
             <div class="yellow-to-orange-gradient screenshot">
                 <img src="images/screenshot/File-Checking-Progress-Report.png"
                      alt="File Checking Progress Report"
@@ -168,32 +179,55 @@
                      title="Firm KPI Report"
                      style="width: 100%;" />
             </div>
+        </section>
+
+        <div class="page-block constrained-width text-centred">
+            <h2 class="text-xl">Where we fit in your business</h2>
+            <a href="images/where-we-fit.png">
+                <img src="images/where-we-fit.png"
+                     class="width-full" style="width: 100%;"
+                     alt="TriTech Compli sits alongside back-office systems and client management to provide compliance management, measurement of performance and risk, record actions and decisions, and evidence of compliance activity and outcomes."
+                />
+            </a>
         </div>
 
-        <div class="purple-to-blue-gradient">
-            <h2 class="constrained-width width-full text-xl text-white" style="margin-bottom:0; padding:3em 1em 1em 1em;">
-                Our Background
-            </h2>
+        <div style="margin:2em 0; text-align: center;">
+            <a href="mailto:hello@tritech-compli.co.uk"
+               style="display:inline-block; padding:0.5em 1em; border-radius:2em; background: #0072B4; text-decoration: none;"
+               class="text-xxl text-white">
+                Contact us for a demo
+                <img src="images/icon/email-fast-outline.svg" alt="Contact us" width="40" style="vertical-align: middle; filter: invert(100%)"/>
+            </a>
         </div>
-        <div class="constrained-width width-full" style="padding: 1em 2em;">
-            <p>TriTech Compli Limited was formed to provide hands-on, pragmatic support to financial advice firms,
-                or those overseeing such firms, in meeting their regulatory responsibilities through effective
-                oversight of firms and advisers.</p>
-            <p>Our software has been monitoring firms and advisers for more than 10 years in a regulatory environment and continues to evolve in an ever-increasing regulatory market.
-                It is built to be intuitive for both the advisers and those providing oversight functions; efficiencies driven by automation have been key to our design decisions.
-            <p>Our team has been involved in developing and running the software since its inception.</p>
-        </div>
+
+        <section>
+            <div class="purple-to-blue-gradient">
+                <h2 class="constrained-width width-full text-xl text-white" style="margin-bottom:0; padding:3em 1em 1em 1em;">
+                    Our Background
+                </h2>
+            </div>
+
+            <div class="constrained-width width-full" style="padding: 1em 2em;">
+                <p>TriTech Compli Limited was formed to provide hands-on, pragmatic support to financial advice firms,
+                    or those overseeing such firms, in meeting their regulatory responsibilities through effective
+                    oversight of firms and advisers.</p>
+                <p>Our software has been monitoring firms and advisers for more than 10 years in a regulatory environment and continues to evolve in an ever-increasing regulatory market.
+                    It is built to be intuitive for both the advisers and those providing oversight functions; efficiencies driven by automation have been key to our design decisions.
+                <p>Our team has been involved in developing and running the software since its inception.</p>
+            </div>
+        </section>
     </main>
 
     <footer class="pink-to-orange-gradient text-dark">
-        <div class="flex-container constrained-width width-full" style="padding:/*5em 1em*/ 1em; justify-content:end; align-items: end;">
-            <address class="text-s text-white" style="flex:2 300px; text-shadow:0 0 0.5em hsl(328, 74%, 26%);">
+        <div class="flex-container constrained-width width-full" style="padding:1em; justify-content:end; align-items: end;">
+            <address class="text-s text-white text-shadow-pink hide-on-print" style="flex:2 300px;">
                 Registered in England & Wales.
                 Registered Number: 13783864.<br />
                 Registered Office: TriTech Compli Ltd, 4 Persh Way, Maisemore, Glos. GL2 8HQ
             </address>
             <div class="text-right" style="flex:1 200px;">
-                <a href="https://uk.linkedin.com/company/tritech-compli-ltd">
+                <a href="https://uk.linkedin.com/company/tritech-compli-ltd"
+                   class="hide-on-print">
                     <img src="images/icon/linkedin.svg"
                          alt="Find TriTech Compli Ltd. on LinkedIn"
                          title="Find us on LinkedIn"
